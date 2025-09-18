@@ -1,13 +1,17 @@
-knightIsAwake = true;
-archerIsAwake = false;
+knightIsAwake =false;
+archerIsAwake = true;
 prisonerIsAwake = true;
-petDogIsPresent = true;
+petDogIsPresent = false;
 
 
 let canExecuteFastAttack = !knightIsAwake;
+console.log('Fast Attack: ' + canExecuteFastAttack)
 
 let canSpy = knightIsAwake || !archerIsAwake || prisonerIsAwake;
+console.log('Can Spy: ' + canSpy)
 
-let canSignalPrisoner = prisonerIsAwake && archerIsAwake;
+let canSignalPrisoner = prisonerIsAwake && !archerIsAwake;
+console.log('canSignalPrisoner: ' + canSignalPrisoner)
 
-let  canFreePrisoner = petDogIsPresent && archerIsAwake || !petDogIsPresent && !knightIsAwake && archerIsAwake;
+let  canFreePrisoner = (petDogIsPresent && !archerIsAwake) || (!petDogIsPresent && !knightIsAwake && !archerIsAwake && prisonerIsAwake);
+console.log('canFreePrisoner: ' + canFreePrisoner)
