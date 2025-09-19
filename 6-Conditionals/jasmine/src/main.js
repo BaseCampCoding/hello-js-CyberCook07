@@ -19,7 +19,7 @@ else{
 // Task 3
 
 let originalPrice = 15000;
-let age = 1;
+let age = 55;
     if (age < 3){
         calculateResellPriceResult = originalPrice * .8
     } else if (age > 10){
